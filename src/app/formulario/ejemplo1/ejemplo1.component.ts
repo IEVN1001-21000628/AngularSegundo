@@ -1,33 +1,60 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
+interface Usuario {
+  nombre: string;
+  edad: number;
+  email: string;
+}
+
 @Component({
   selector: 'app-ejemplo1',
   standalone: true,
   imports: [ReactiveFormsModule],
   templateUrl: './ejemplo1.component.html',
-  styles: ``
+  styles: ``,
 })
-export class Ejemplo1Component implements OnInit{
-
+export default class Ejemplo1Component implements OnInit {
   formGroup!: FormGroup;
-  constructor(private readonly fb: FormBuilder){
+  nombre: string = 'Ivan';
 
-  }
+  persona: Usuario = {
+    nombre: '',
+    edad: 0,
+    email: '',
+  };
+  constructor(private readonly fb: FormBuilder) {}
 
   ngOnInit(): void {
-    this.formGroup=this.initForm();
+    this.formGroup = this.initForm();
   }
 
-  initForm():FormGroup{
+  initForm(): FormGroup {
     return this.fb.group({
-      email:[''],
-      password:['']
-    })
+      nombre: [''],
+      edad: [''],
+      email: [''],
+    });
   }
 
-  onSubmit():void{
-    console.log('Form ->', this.formGroup.value);
+  onSubmit(): void {
+    const { nombre, edad, email } = this.formGroup.value;
+    this.persona.nombre = nombre;
+    this.persona.edad = edad;
+    this.persona.email = email;
+
+    /* localStorage.setItem("nombre", this.nombre) */
+
+    let personaJSON = JSON.stringify(this.persona);
+
+    localStorage.setItem('persona', personaJSON);
   }
 
+  subImprime(): void {
+    const usuarioGuardado = localStorage.getItem('Persona');
+    if (usuarioGuardado) {
+      const usuarioRecuperado: Usuario = JSON.parse(usuarioGuardado);
+      this.persona = usuarioRecuperado;
+    }
+  }
 }
