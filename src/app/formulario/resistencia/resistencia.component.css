@@ -1,0 +1,52 @@
+.color-box {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
+  }
+  
+  .Negro {
+    background-color: black;
+  }
+  
+  .Cafe {
+    background-color: brown;
+  }
+  
+  .Rojo {
+    background-color: red;
+  }
+  
+  .Naranja {
+    background-color: orange;
+  }
+  
+  .Amarillo {
+    background-color: yellow;
+  }
+  
+  .Verde {
+    background-color: green;
+  }
+  
+  .Azul {
+    background-color: blue;
+  }
+  
+  .Violeta {
+    background-color: violet;
+  }
+  
+  .Gris {
+    background-color: gray;
+  }
+  
+  .Blanco {
+    background-color: white;
+  }
+  .plata{
+    background-color: #C0C0C0;
+  }
+  .dorado{
+    background-color: #FFD700;
+  }
+  

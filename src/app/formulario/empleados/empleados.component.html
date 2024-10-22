@@ -1,0 +1,166 @@
+<div class="grid grid-cols-2 grid-rows-1 gap-2">
+  <div>
+    <form class="max-w-md mx-auto" [formGroup]="formGroup" (ngSubmit)="modificarEmpleado()">
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          formControlName="matricula"
+          type="number"
+          name="floating_email"
+          id="floating_email"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+          required
+        />
+        <label
+          for="matricula"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Matricula</label
+        >
+      </div>
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          type="text"
+          formControlName="nombre"
+          name="floating_password"
+          id="floating_password"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+          required
+        />
+        <label
+          for="nombre"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Nombre</label
+        >
+      </div>
+      <div class="relative z-0 w-full mb-5 group">
+        <input
+          type="email"
+          formControlName="correo"
+          name="repeat_password"
+          id="floating_repeat_password"
+          class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          placeholder=" "
+          required
+        />
+        <label
+          for="correo"
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+          >Correo</label
+        >
+      </div>
+      <div class="relative z-0 w-full mb-5 group">
+        <div class="relative z-0 w-full mb-5 group">
+          <input
+            type="number"
+            formControlName="edad"
+            name="floating_first_name"
+            id="floating_first_name"
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
+            required
+          />
+          <label
+            for="edad"
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >Edad</label
+          >
+        </div>
+      </div>
+      <div class="relative z-0 w-full mb-5 group">
+        <div class="relative z-0 w-full mb-5 group">
+          <input
+            type="number"
+            formControlName="horas"
+            name="floating_first_name"
+            id="floating_first_name"
+            class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+            placeholder=" "
+            required
+          />
+          <label
+            for="horas"
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+            >Horas</label
+          >
+        </div>
+      </div>
+      <button
+      (click)="registrarEmpleado()"
+        type="submit"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Registrar
+      </button>
+    </form>
+  </div>
+  <div>
+    <button
+      type="submit"
+      (click)="imprimirTabla()"
+      class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+    >
+      Imprimir Tabla
+    </button>
+
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <table *ngIf="modulo.length"
+        class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+      >
+        <thead class="text-xs text-gray-700 uppercase dark:text-gray-400">
+          <tr>
+            <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+              Matricula
+            </th>
+            <th scope="col" class="px-6 py-3">Nombre</th>
+            <th scope="col" class="px-6 py-3 bg-gray-50 dark:bg-gray-800">
+              correo
+            </th>
+            <th scope="col" class="px-6 py-3">edad</th>
+            <th scope="col" class="px-6 py-3">Horas</th>
+            <th scope="col" class="px-6 py-3">Horas x trabajar</th>
+            <th scope="col" class="px-6 py-3">Horas extras</th>
+            <th scope="col" class="px-6 py-3">Subtotal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-200 dark:border-gray-700" *ngFor="let persona of modulo">
+            <th
+              scope="row"
+              class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap bg-gray-50 dark:text-white dark:bg-gray-800"
+            >
+             {{persona.matricula}}
+            </th>
+            <td class="px-6 py-4">{{persona.nombre}}</td>
+            <td class="px-6 py-4 bg-gray-50 dark:bg-gray-800">{{persona.correo}}</td>
+            <td class="px-6 py-4">{{persona.edad}}</td>
+            <td class="px-6 py-4">{{persona.horas}}</td>
+            <td class="px-6 py-4">{{calcularSalario(persona.horas).pagoBase}}</td>
+            <td class="px-6 py-4">{{calcularSalario(persona.horas).pagoExtras}}</td>
+            <td class="px-6 py-4">{{calcularSalario(persona.horas).total}}</td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+    <div class="grid grid-cols-1 grid-rows-2 gap-3">
+      <div ><button
+        type="submit"
+        (click)="modificarEmpleado()"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Modificar
+      </button></div>
+      <div ><button
+        (click)="borrarEmpleado()"
+          type="submit"
+          class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        >
+          Eliminar
+        </button></div>
+  </div>
+    
+    
+
+  </div>
+</div>

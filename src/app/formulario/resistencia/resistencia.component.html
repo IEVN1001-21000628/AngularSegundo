@@ -1,0 +1,180 @@
+<form [formGroup]="formGroup">
+  <div class="grid grid-cols-3 grid-rows-2 gap-1">
+    <!---->
+
+    <div>
+      <label
+        for="countries"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Primera Banda</label
+      >
+      <label for=""> color 1:</label>
+      <select name="" id="" formControlName="color1">
+        <option value="Negro">Negro</option>
+        <option value="Cafe">Cafe</option>
+        <option value="Rojo">Rojo</option>
+        <option value="Naranja">Naranja</option>
+        <option value="Amarillo">Amarillo</option>
+        <option value="Verde">Verde</option>
+        <option value="Azul">Azul</option>
+        <option value="violeta">Violeta</option>
+        <option value="Gris">Gris</option>
+        <option value="Blanco">Blanco</option>
+      </select>
+    </div>
+
+    <div>
+      <label
+        for="countries"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Segunda Banda</label
+      >
+      <label for="">Color 2:</label>
+      <select name="" id="" formControlName="color2">
+        <option value="negro">Negro</option>
+        <option value="Cafe">Cafe</option>
+        <option value="Rojo">Rojo</option>
+        <option value="Naranja">Naranja</option>
+        <option value="Amarillo">Amarillo</option>
+        <option value="Verde">Verde</option>
+        <option value="azul">Azul</option>
+        <option value="violeta">Violeta</option>
+        <option value="Gris">Gris</option>
+        <option value="Blanco">Blanco</option>
+      </select>
+    </div>
+    <div>
+      <label
+        for="countries"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Tercera Banda</label
+      >
+      <label for="">Color 3: </label>
+      <select name="" id="" formControlName="color3">
+        <option value="negro">Negro</option>
+        <option value="Cafe">Cafe</option>
+        <option value="Rojo">Rojo</option>
+        <option value="Naranja">Naranja</option>
+        <option value="Amarillo">Amarillo</option>
+        <option value="Verde">Verde</option>
+        <option value="azul">Azul</option>
+        <option value="violeta">Violeta</option>
+        <option value="Gris">Gris</option>
+        <option value="Blanco">Blanco</option>
+      </select>
+    </div>
+
+    <div>
+      <label
+        for="countries"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >Tolerancia</label
+      >
+      <div class="flex items-center mb-4">
+        <input
+          id="default-radio-1"
+          type="radio"
+          value="dorado"
+          name="opc1"
+          formControlName="opc1"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+        />
+        <label
+          for="default-radio-1"
+          class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+          >Dorado</label
+        >
+      </div>
+      <div class="flex items-center">
+        <input
+          checked
+          id="default-radio-2"
+          type="radio"
+          value="plata"
+          name="opc1"
+          formControlName="opc1"
+          class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+        />
+        <label
+          for="default-radio-2"
+          class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+          >Plateado</label
+        >
+      </div>
+    </div>
+    <div class="row-start-3">
+      <button
+      (click)="registrarColores()"
+        class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800"
+      >
+        <span
+          class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
+        >
+          Registrar
+        </span>
+      </button>
+    </div>
+    <div class="row-start-3">
+      <button
+      (click)="imprimiRes()"
+        class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-cyan-500 to-blue-500 group-hover:from-cyan-500 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-cyan-200 dark:focus:ring-cyan-800"
+      >
+        <span
+          class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0"
+        >
+          Imprimir
+        </span>
+      </button>
+      <!-- <h2>color 1: {{ modulo.color1 }}</h2>
+        <div class="color-box" [class]="modulo.color1"></div>
+        <h2>color 2:{{ modulo.color2 }}</h2>
+        <div class="color-box" [class]="modulo.color2"></div>
+        <h2>Color 3:{{ modulo.color3 }}</h2>
+        <div class="color-box" [class]="modulo.color3"></div>
+        <h2>Tolereancia :{{ modulo.opc1 }}</h2>
+        <h2>el calculo de la resistencia es:  {{modulo.res}}</h2> -->
+
+      <div class="grid grid-cols-2 grid-rows-1 gap-2">
+      </div>
+      
+
+<div class="relative overflow-x-auto">
+  <table *ngIf="modulo2.length" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400" >
+    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+            <th scope="col" class="px-6 py-3 ">Color 1</th>
+            <th scope="col" class="px-6 py-3">Color 2</th>
+            <th scope="col" class="px-6 py-3">COlor 3</th>
+            <th scope="col" class="px-6 py-3">Tolerancia</th>
+            <th scope="col" class="px-6 py-3">Resistencia</th>
+            <th scope="col" class="px-6 py-3">Minimo</th>
+            <th scope="col" class="px-6 py-3">Maximo</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let datos of modulo2" class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white color-box" [class]="datos.color1">            
+            {{datos.color1}}
+          </th>
+          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white color-box" [class]="datos.color2">            
+            {{datos.color2}}
+          </th>
+          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white color-box" [class]="datos.color3">            
+            {{datos.color3}}
+          </th>
+          <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white color-box" [class]="datos.opc1">            
+            {{datos.opc1}}
+          </th>
+            <td class="px-6 py-4">{{datos.res}}</td>
+            <td class="px-6 py-4">{{datos.min}}</td>
+            <td class="px-6 py-4">{{datos.max}}</td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+    </div>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+  </div>
+  <!---->
+</form>
