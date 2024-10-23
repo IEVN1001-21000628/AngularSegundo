@@ -17,7 +17,7 @@ interface Empl{
   templateUrl: './empleados.component.html',
   styleUrl: './empleados.component.css'
 })
-export class EmpleadosComponent implements OnInit{
+export default class EmpleadosComponent implements OnInit{
   formGroup!: FormGroup;
 
   matriculaBuscar:number=0;
@@ -45,7 +45,6 @@ export class EmpleadosComponent implements OnInit{
       horas:[0]
     })
   }
-  
   registrarEmpleado(){
     const { matricula, nombre, correo, edad, horas } = this.formGroup.value;
 
@@ -109,21 +108,48 @@ export class EmpleadosComponent implements OnInit{
 
   }
 
-  modificarEmpleado(){
-    const { matricula, nombre, correo, edad, horas } = this.formGroup.value;
-    const index=this.modulo.findIndex(emp=>emp.matricula===matricula)
+  // Función para cargar los datos del empleado
+cargarEmpleado()
+{
+    const { matricula } = this.formGroup.value;
+    const empleado = this.modulo.find(emp => emp.matricula === matricula);
 
-    if (index !==-1) {
-      this.modulo[index]={
-        matricula,
-        nombre,
-        correo,
-        edad,
-        horas
-      }
-      localStorage.setItem('empleado', JSON.stringify(this.modulo))
+    if (empleado) {
+        this.formGroup.patchValue({
+            nombre: empleado.nombre,
+            correo: empleado.correo,
+            edad: empleado.edad,
+            horas: empleado.horas
+        });
+    } else {
+        alert('Empleado no encontrado');
     }
-  }
+}
+
+// Función para modificar los datos del empleado existente
+modificarEmpleado()
+{
+    const { matricula, nombre, correo, edad, horas } = this.formGroup.value;
+    const index = this.modulo.findIndex(emp => emp.matricula === matricula);
+
+    if (index !== -1) {
+        // Actualizamos el empleado existente
+        this.modulo[index] = {
+            matricula,
+            nombre,
+            correo,
+            edad,
+            horas
+        };
+        localStorage.setItem('empleado', JSON.stringify(this.modulo));
+    } else {
+        alert('No se encontró el empleado para modificar.');
+    }
+}
+
+
+
+ 
 
   borrarEmpleado(){
     const{ matricula }=this.formGroup.value;
@@ -134,4 +160,10 @@ export class EmpleadosComponent implements OnInit{
     }
   }
 
+  sumarSubtotales() {
+    return this.modulo.reduce((total, empleado) => {
+      const subtotal = this.calcularSalario(empleado.horas).total;  // Calcula el subtotal de cada empleado
+      return total + subtotal;  // Suma los subtotales
+    }, 0);  // Inicializamos la suma en 0
+  }
 }

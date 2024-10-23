@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { MessageserviceService } from '../messageservice.service';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-list-message',
   standalone: true,
-  imports: [],
+  imports: [FormsModule, CommonModule],
   templateUrl: './list-message.component.html',
   styles: ``
 })

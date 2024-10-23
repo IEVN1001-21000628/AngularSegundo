@@ -4,11 +4,13 @@ export default[
     {
         path: 'ejemplo1',
         loadComponent: ()=> import('./ejemplo1/ejemplo1.component')
-    },
-    {
+    },{
         path: 'resistencia',
-        loadComponent: ()=>import('./resistencia/resistencia.component')
-    } 
+        loadComponent: ()=> import('./resistencia/resistencia.component') 
+    },{
+        path: 'empleado',
+        loadComponent: ()=> import('./empleados/empleados.component')
+    }
   
     
 ]as Routes

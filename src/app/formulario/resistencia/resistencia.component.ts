@@ -8,11 +8,6 @@ interface Res {
   color2: string;
   color3: string;
   opc1: string;
- /*  res?:number;
-  min?:number;
-  max?:number; */
-
-  //tol:number
 }
 
 interface Res2{
@@ -32,7 +27,7 @@ interface Res2{
   templateUrl: './resistencia.component.html',
   styleUrls: ['./resistencia.component.css'],
 })
-export class ResistenciaComponent implements OnInit {
+export default class ResistenciaComponent implements OnInit {
   formGroup!: FormGroup;
 
   colorValores: any = {
@@ -55,10 +50,6 @@ export class ResistenciaComponent implements OnInit {
     color2: '',
     color3: '',
     opc1: '',
-/*     res:0,
-    min:0,
-    max:0
-    //tol:0, */
   };
 
   modulo2: Res2[] =[{
@@ -104,14 +95,7 @@ export class ResistenciaComponent implements OnInit {
         const min:number=(resistencia*valores)-resistencia;
         const max:number=(resistencia*valores)+resistencia;
 
-
-        //const ohms=this.colorValores[tolerancia].tol;
-
-        /* const variacion:number=tolerancia*resistencia;
-        const toleranciaMinima:number=resistencia-variacion;
-        const toleranciaMaxima:number=resistencia+variacion */
-
-        this.modulo = { color1, color2, color3, opc1}; //tol: tolerancia res: resistencia, min: min, max: max
+        this.modulo = { color1, color2, color3, opc1}; 
 
         let datosGuardados = localStorage.getItem('dato');
         let listaModulos = datosGuardados ? JSON.parse(datosGuardados) : [];

@@ -92,6 +92,13 @@
       >
         Registrar
       </button>
+      <button
+      (click)="modificarEmpleado()"
+        type="submit"
+        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+      >
+        Actualizar
+      </button>
     </form>
   </div>
   <div>
@@ -141,16 +148,23 @@
           </tr>
           
         </tbody>
+        <tfoot>
+          <tr class="font-semibold text-gray-900 dark:text-white">
+              <th scope="row" class="px-6 py-3 text-base">Total</th>
+              <td class="px-6 py-3">$ {{sumarSubtotales()}}</td>
+          </tr>
+      </tfoot>
       </table>
     </div>
     <div class="grid grid-cols-1 grid-rows-2 gap-3">
       <div ><button
         type="submit"
-        (click)="modificarEmpleado()"
+        (click)="cargarEmpleado()"
         class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       >
         Modificar
-      </button></div>
+      </button>
+    </div>
       <div ><button
         (click)="borrarEmpleado()"
           type="submit"
