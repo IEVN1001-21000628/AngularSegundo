@@ -66,28 +66,25 @@ export default class EmpleadosComponent implements OnInit{
     this.modulo = listaModulos;
     const salario = this.calcularSalario(nuevoEmpleado.horas);
 
-    
+    this.formGroup.get('matricula')?.setValue('');
+    this.formGroup.get('nombre')?.setValue('');
+    this.formGroup.get('correo')?.setValue('');
+    this.formGroup.get('edad')?.setValue('');
+    this.formGroup.get('horas')?.setValue('');
   }
 
   calcularSalario(horas: number): {pagoBase: number, pagoExtras: number, total: number} {
 
-  
     let pagoBase = 0;
     let pagoExtras = 0;
-
     if (horas <= 40) {
-
       pagoBase = horas * 70;
     } else {
-
       pagoBase = 40 * 70;
-
       const horasExtras = horas - 40;
       pagoExtras = horasExtras * 140;
     }
-
     const total = pagoBase + pagoExtras;
-
     return { pagoBase, pagoExtras, total };
   }
   
@@ -108,7 +105,7 @@ export default class EmpleadosComponent implements OnInit{
 
   }
 
-  // Función para cargar los datos del empleado
+
 cargarEmpleado()
 {
     const { matricula } = this.formGroup.value;
@@ -121,19 +118,17 @@ cargarEmpleado()
             edad: empleado.edad,
             horas: empleado.horas
         });
-    } else {
-        alert('Empleado no encontrado');
     }
 }
 
-// Función para modificar los datos del empleado existente
+
 modificarEmpleado()
 {
     const { matricula, nombre, correo, edad, horas } = this.formGroup.value;
     const index = this.modulo.findIndex(emp => emp.matricula === matricula);
 
     if (index !== -1) {
-        // Actualizamos el empleado existente
+
         this.modulo[index] = {
             matricula,
             nombre,
@@ -142,14 +137,13 @@ modificarEmpleado()
             horas
         };
         localStorage.setItem('empleado', JSON.stringify(this.modulo));
-    } else {
-        alert('No se encontró el empleado para modificar.');
     }
+    this.formGroup.get('matricula')?.setValue('');
+    this.formGroup.get('nombre')?.setValue('');
+    this.formGroup.get('correo')?.setValue('');
+    this.formGroup.get('edad')?.setValue('');
+    this.formGroup.get('horas')?.setValue('');
 }
-
-
-
- 
 
   borrarEmpleado(){
     const{ matricula }=this.formGroup.value;
@@ -162,8 +156,8 @@ modificarEmpleado()
 
   sumarSubtotales() {
     return this.modulo.reduce((total, empleado) => {
-      const subtotal = this.calcularSalario(empleado.horas).total;  // Calcula el subtotal de cada empleado
-      return total + subtotal;  // Suma los subtotales
-    }, 0);  // Inicializamos la suma en 0
+      const subtotal = this.calcularSalario(empleado.horas).total;  
+      return total + subtotal;  
+    }, 0);  
   }
 }
