@@ -8,5 +8,9 @@ export const routes: Routes = [
     {
         path: 'formulario',
         loadChildren: ()=> import('./formulario/form.routes')
+    },
+    {
+        path: 'utl',
+        loadChildren: ()=> import('./utl/utl.routes')
     }
 ]as Routes;
