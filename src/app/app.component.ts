@@ -9,7 +9,7 @@ import { AddMessageComponent } from "./tem/add-message/add-message.component";//
 import { ListMessageComponent } from "./tem/list-message/list-message.component";// */
 import  AgregarComponent, {}  from './utl/agregar/agregar.component';
 import  AlumnosComponent, {}  from './utl/alumnos/alumnos.component';
-import { EditarComponent } from './utl/editar/editar.component';
+import  EditarComponent, {}  from './utl/editar/editar.component';
 import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 
@@ -17,7 +17,7 @@ import { NavbarComponent } from './navbar/navbar.component';
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet, NavbarComponent, AlumnosComponent
+    RouterOutlet, NavbarComponent, AlumnosComponent, EditarComponent
   ],
   
   templateUrl: './app.component.html',
